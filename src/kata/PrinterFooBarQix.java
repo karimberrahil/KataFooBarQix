@@ -41,14 +41,15 @@ public class PrinterFooBarQix {
      */
     public static String numberToWord(String number)
     {
-    	String mot="";
+    	String mot="";//Mot qui sera retourne
+        //Si number contient 3, 5 ou 7
     	if(number.contains("3")||number.contains("5")||number.contains("7"))
 		{
-			for(int i=0; i<number.length(); i++)
+			for(int i=0; i<number.length(); i++)//Parcourt chaque chiffre de number
 			{
-				switch (number.charAt(i)) {
-	            case '3':
-	            	mot+="Foo";
+				switch (number.charAt(i)) {//Test si le chiffre teste est egal a 3, 5 ou 7
+	            case '3'://Si le chiffre teste est egal a 3
+	            	mot+="Foo";//on ajoute a mot, le texte Foo
 	                break;
 	            case '5':
 	            	mot+="Bar";
