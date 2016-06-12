@@ -3,27 +3,17 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 /*
- * Programme qui affiche les nombres de 1 à 100. Un nombre par ligne. 
- * Avec les règles suivantes :
- * Si le nombre est divisible par 3 ou contient 3, écrire “Foo” à la place de 3.
- * Si le nombre est divisible par 5 ou contient 5, écrire “Bar” à la place de 5.
- * Si le nombre est divisible par 7 ou contient 7, écrire “Qix” à la place de 7. 
+ * Programme qui affiche les nombres de 1 Ã  100. Un nombre par ligne. 
+ * Avec les rÃ¨gles suivantes :
+ * Si le nombre est divisible par 3 ou contient 3, Ã©crire â€œFooâ€ Ã  la place de 3.
+ * Si le nombre est divisible par 5 ou contient 5, Ã©crire â€œBarâ€ Ã  la place de 5.
+ * Si le nombre est divisible par 7 ou contient 7, Ã©crire â€œQixâ€ Ã  la place de 7. 
  * On regarde les diviseurs avant le contenu
- * On regarde le contenu dans l'ordre où il apparait 
+ * On regarde le contenu dans l'ordre oÃ¹ il apparait 
  * On regarde les multiples dans l'ordre Foo, Bar puis Qix 
  */
 public class PrinterFooBarQix {
 	
-	//HashMap contenant la combinaison entier/mot
-	private static final HashMap<Integer, String> translate;
-    static
-    {
-    	translate = new HashMap<Integer, String>();
-    	translate.put(3, "Foo");
-    	translate.put(5, "Bar");
-    	translate.put(7, "Qix");
-    }	
-
     /*
      * Si number est divisible par 3, 5 ou 7
      * retourne la combinaison de mot (Foo, Bar, Qix) correspondant
@@ -31,6 +21,12 @@ public class PrinterFooBarQix {
     public static String convertDivisible(String number)
     {
     	String mot="";
+    	//HashMap contenant la combinaison entier/mot
+    	HashMap<Integer, String> translate= new HashMap<Integer, String>();
+    	translate.put(3, "Foo");
+    	translate.put(5, "Bar");
+    	translate.put(7, "Qix");
+        	
 		Iterator<Integer> listeNombres = translate.keySet().iterator();
 		while(listeNombres.hasNext()){//parcourt la HashMap
 		  Integer key = listeNombres.next();//key recupere l'indice actuel du parcourt de la HashMap 
